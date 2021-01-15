@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Platforms>AnyCPU;x64</Platforms>
     <ApplicationIcon>Icon1.ico</ApplicationIcon>
+    <Configurations>Debug;Release;Release Setup</Configurations>
   </PropertyGroup>
 
 </Project>
