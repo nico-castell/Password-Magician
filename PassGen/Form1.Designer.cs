@@ -47,6 +47,7 @@ namespace PassGen
             // 
             // OutBox
             // 
+            this.OutBox.BackColor = System.Drawing.Color.White;
             this.OutBox.Location = new System.Drawing.Point(12, 24);
             this.OutBox.Name = "OutBox";
             this.OutBox.ReadOnly = true;
