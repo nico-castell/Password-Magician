@@ -3,6 +3,12 @@
 All significant changes to the program will be documented in this file.  
 We're using [semantic versioning](http://semver.org/).
 
+## Version 1.2.1
+
+### Fixed
+
+Now the text box is white instead of grey.
+
 ## Version 1.2.0
 
 ### Added
