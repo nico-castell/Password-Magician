@@ -35,8 +35,8 @@ namespace PassGen
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lengthSelector = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.lengthSelector = new System.Windows.Forms.NumericUpDown();
             this.allowLeters = new System.Windows.Forms.CheckBox();
             this.allowNumbers = new System.Windows.Forms.CheckBox();
             this.allowSymbols = new System.Windows.Forms.CheckBox();
@@ -95,6 +95,15 @@ namespace PassGen
             this.label3.TabIndex = 4;
             this.label3.Text = "2.";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Largo:";
+            // 
             // lengthSelector
             // 
             this.lengthSelector.Location = new System.Drawing.Point(37, 100);
@@ -111,15 +120,6 @@ namespace PassGen
             0,
             0,
             0});
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Largo:";
             // 
             // allowLeters
             // 
@@ -217,8 +217,8 @@ namespace PassGen
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown lengthSelector;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown lengthSelector;
         private System.Windows.Forms.CheckBox allowLeters;
         private System.Windows.Forms.CheckBox allowNumbers;
         private System.Windows.Forms.CheckBox allowSymbols;
