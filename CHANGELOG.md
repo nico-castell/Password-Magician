@@ -3,6 +3,13 @@
 All significant changes to the program will be documented in this file.  
 We're using [semantic versioning](http://semver.org/).
 
+## Version 1.2.0
+
+### Added
+
+1. An installer for the program.
+2. An icon.
+
 ## Version 1.1.0
 
 ### Changed
