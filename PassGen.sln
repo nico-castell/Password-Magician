@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassGen", "PassGen.csproj", "{B593FAC3-8203-4F2A-8BA0-B3A0A905753F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassGen", "PassGen\PassGen.csproj", "{B593FAC3-8203-4F2A-8BA0-B3A0A905753F}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{B19774B7-540C-4B1B-B210-A11D6374FED1}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{B19774B7-540C-4B1B-B210-A11D6374FED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
