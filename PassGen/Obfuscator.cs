@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PassGen
 {
@@ -16,7 +14,8 @@ namespace PassGen
         /// <summary>
         /// Assign a string and some of its characters will be used in the key.
         /// </summary>
-        public string Key {
+        public string Key
+        {
             set
             {
                 _key[0] = value[0];
