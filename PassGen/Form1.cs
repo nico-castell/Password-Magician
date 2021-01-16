@@ -31,6 +31,7 @@ namespace PassGen
                 StartGen.Text = "Obfuscar contraseña";
                 insertPassLabel.Visible = true;
                 OutBox.ReadOnly = false;
+                this.Text = "Obfuscar contraseñas";
                 foreach (CheckBox checkBox in checkBoxes)
                 {
                     checkBox.Enabled = false;
@@ -45,6 +46,7 @@ namespace PassGen
                 StartGen.Text = "Generar contraseña";
                 insertPassLabel.Visible = false;
                 OutBox.ReadOnly = true;
+                this.Text = "Generar contraseñas";
                 foreach (CheckBox checkBox in checkBoxes)
                     checkBox.Enabled = true;
             }
