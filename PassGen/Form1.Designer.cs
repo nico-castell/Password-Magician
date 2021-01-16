@@ -42,6 +42,8 @@ namespace PassGen
             this.allowSymbols = new System.Windows.Forms.CheckBox();
             this.showText = new System.Windows.Forms.CheckBox();
             this.copyToClipboard = new System.Windows.Forms.Button();
+            this.modeSelector = new System.Windows.Forms.Button();
+            this.insertPassLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lengthSelector)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +101,7 @@ namespace PassGen
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 82);
+            this.label4.Location = new System.Drawing.Point(35, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 15);
             this.label4.TabIndex = 6;
@@ -107,7 +109,7 @@ namespace PassGen
             // 
             // lengthSelector
             // 
-            this.lengthSelector.Location = new System.Drawing.Point(37, 100);
+            this.lengthSelector.Location = new System.Drawing.Point(35, 84);
             this.lengthSelector.Minimum = new decimal(new int[] {
             1,
             0,
@@ -182,11 +184,33 @@ namespace PassGen
             this.copyToClipboard.UseVisualStyleBackColor = true;
             this.copyToClipboard.Click += new System.EventHandler(this.CopyToClipboard);
             // 
+            // modeSelector
+            // 
+            this.modeSelector.Location = new System.Drawing.Point(23, 114);
+            this.modeSelector.Name = "modeSelector";
+            this.modeSelector.Size = new System.Drawing.Size(98, 35);
+            this.modeSelector.TabIndex = 12;
+            this.modeSelector.Text = "Obfuscar";
+            this.modeSelector.UseVisualStyleBackColor = true;
+            this.modeSelector.Click += new System.EventHandler(this.modeSelector_Click);
+            // 
+            // insertPassLabel
+            // 
+            this.insertPassLabel.AutoSize = true;
+            this.insertPassLabel.Location = new System.Drawing.Point(12, 9);
+            this.insertPassLabel.Name = "insertPassLabel";
+            this.insertPassLabel.Size = new System.Drawing.Size(121, 15);
+            this.insertPassLabel.TabIndex = 13;
+            this.insertPassLabel.Text = "Inserte su contraseña:";
+            this.insertPassLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 171);
+            this.Controls.Add(this.insertPassLabel);
+            this.Controls.Add(this.modeSelector);
             this.Controls.Add(this.copyToClipboard);
             this.Controls.Add(this.showText);
             this.Controls.Add(this.allowSymbols);
@@ -204,7 +228,7 @@ namespace PassGen
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Generador de contraseñas";
+            this.Text = "Generar contraseñas";
             ((System.ComponentModel.ISupportInitialize)(this.lengthSelector)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,6 +249,8 @@ namespace PassGen
         private System.Windows.Forms.CheckBox allowSymbols;
         private System.Windows.Forms.CheckBox showText;
         private System.Windows.Forms.Button copyToClipboard;
+        private System.Windows.Forms.Button modeSelector;
+        private System.Windows.Forms.Label insertPassLabel;
     }
 }
 
