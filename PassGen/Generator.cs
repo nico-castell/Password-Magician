@@ -17,7 +17,7 @@ namespace PassGen
             string output = "";
             for (int i = 0; i < length; i++)
             {
-                output += _GenValidChar();
+                output += GenValidChar();
             }
             return output;
         }
@@ -26,14 +26,14 @@ namespace PassGen
         /// Generates valid characters based on _allowLetters, _allowNumbers, and _allowSymbols
         /// </summary>
         /// <returns>A valid chracter to be used in the password</returns>
-        char _GenValidChar()
+        char GenValidChar()
         {
             Random random = new Random();
             char output;
             while (true)
             {
                 output = (char)random.Next(33, 126);
-                if (_ValidateChar(output)) break;
+                if (ValidateChar(output)) break;
             }
             return output;
         }

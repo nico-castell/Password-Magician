@@ -16,7 +16,7 @@ namespace PassGen
         readonly Obfuscator obfuscator = new Obfuscator();
         //
         // Swith between 'generate' mode and 'obfuscate' mode, Changing the UI to fit the purpose.
-        private void modeSelector_Click(object sender, EventArgs e)
+        private void ModeSelector_Click(object sender, EventArgs e)
         {
             // The button contains the text of the mode to choose (not the chosen mode).
             Button button = (Button)sender;
@@ -80,7 +80,7 @@ namespace PassGen
             if (boxesAreOn == 1)
             {
                 foreach (CheckBox checkBox in checkBoxes)
-                    checkBox.Enabled = checkBox.Checked ? false : true;
+                    checkBox.Enabled = !checkBox.Checked;
             }
             else
             {

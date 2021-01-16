@@ -10,7 +10,7 @@ namespace PassGen
         /// <summary>
         /// An array of 4 characters used to obfuscate the password.
         /// </summary>
-        char[] _key = new char[4];
+        readonly char[] _key = new char[4];
         /// <summary>
         /// Assign a string and some of its characters will be used in the key.
         /// </summary>
@@ -20,8 +20,8 @@ namespace PassGen
             {
                 _key[0] = value[0];
                 _key[1] = value[1];
-                _key[2] = value[value.Length - 2];
-                _key[3] = value[value.Length - 1];
+                _key[2] = value[^2]; // Use 'from the end' operator.
+                _key[3] = value[^1];
             }
         }
         //

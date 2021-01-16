@@ -64,7 +64,7 @@
         /// </summary>
         /// <param name="charToTest">The integer representing a character to test</param>
         /// <returns>True if valid, False if not valid</returns>
-        public bool _ValidateChar(in int charToTest)
+        public bool ValidateChar(in int charToTest)
         {
             bool result = false;
             // Test letters (ASCII range and allowance)

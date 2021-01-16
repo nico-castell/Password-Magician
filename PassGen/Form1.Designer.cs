@@ -192,7 +192,7 @@ namespace PassGen
             this.modeSelector.TabIndex = 12;
             this.modeSelector.Text = "Obfuscar";
             this.modeSelector.UseVisualStyleBackColor = true;
-            this.modeSelector.Click += new System.EventHandler(this.modeSelector_Click);
+            this.modeSelector.Click += new System.EventHandler(this.ModeSelector_Click);
             // 
             // insertPassLabel
             // 
