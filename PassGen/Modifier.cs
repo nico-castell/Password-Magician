@@ -58,5 +58,38 @@
                 _allowSymbols = value;
             }
         }
+        //
+        /// <summary>
+        /// Validate that the number represents a valid character.
+        /// </summary>
+        /// <param name="charToTest">The integer representing a character to test</param>
+        /// <returns>True if valid, False if not valid</returns>
+        public bool _ValidateChar(in int charToTest)
+        {
+            bool result = false;
+            // Test letters (ASCII range and allowance)
+            if (((charToTest > 64 && charToTest < 91)   ||
+                 (charToTest > 96 && charToTest < 123)) &&
+               _allowLetters == true)
+            {
+                result = true;
+            }
+            // Test symbols (ASCII range and allowance)
+            if (((charToTest > 32  && charToTest < 48)    ||
+                 (charToTest > 57  && charToTest < 65)    ||
+                 (charToTest > 90  && charToTest < 97)    ||
+                 (charToTest > 122 && charToTest < 127)) &&
+                _allowSymbols == true)
+            {
+                result = true;
+            }
+            // Test numbers (ASCII range and allowance)
+            if ((charToTest > 47 && charToTest < 58) &&
+                _allowNumbers == true)
+            {
+                result = true;
+            }
+            return result;
+        }
     }
 }

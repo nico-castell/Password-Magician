@@ -32,33 +32,8 @@ namespace PassGen
             char output;
             while (true)
             {
-                int t = random.Next(33, 126);
-
-                // Test letters (ASCII range and allowance)
-                if (((t > 64 && t < 91)   ||
-                     (t > 96 && t < 123)) &&
-                   AllowLetters == true)
-                {
-                    output = (char)t;
-                    break;
-                }
-                // Test symbols (ASCII range and allowance)
-                if (((t > 32  && t < 48)   ||
-                     (t > 57  && t < 65)   ||
-                     (t > 90  && t < 97)   ||
-                     (t > 122 && t < 127)) &&
-                    AllowSymbols == true)
-                {
-                    output = (char)t;
-                    break;
-                }
-                // Test numbers (ASCII range and allowance)
-                if ((t > 47 && t < 58) &&
-                    AllowNumbers == true)
-                {
-                    output = (char)t;
-                    break;
-                }
+                output = (char)random.Next(33, 126);
+                if (_ValidateChar(output)) break;
             }
             return output;
         }
