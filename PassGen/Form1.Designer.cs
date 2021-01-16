@@ -37,7 +37,7 @@ namespace PassGen
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lengthSelector = new System.Windows.Forms.NumericUpDown();
-            this.allowLeters = new System.Windows.Forms.CheckBox();
+            this.allowLetters = new System.Windows.Forms.CheckBox();
             this.allowNumbers = new System.Windows.Forms.CheckBox();
             this.allowSymbols = new System.Windows.Forms.CheckBox();
             this.showText = new System.Windows.Forms.CheckBox();
@@ -126,16 +126,16 @@ namespace PassGen
             // 
             // allowLeters
             // 
-            this.allowLeters.AutoSize = true;
-            this.allowLeters.Checked = true;
-            this.allowLeters.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.allowLeters.Location = new System.Drawing.Point(148, 80);
-            this.allowLeters.Name = "allowLeters";
-            this.allowLeters.Size = new System.Drawing.Size(99, 19);
-            this.allowLeters.TabIndex = 7;
-            this.allowLeters.Text = "Permitir letras";
-            this.allowLeters.UseVisualStyleBackColor = true;
-            this.allowLeters.Click += new System.EventHandler(this.CheckAllowances);
+            this.allowLetters.AutoSize = true;
+            this.allowLetters.Checked = true;
+            this.allowLetters.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.allowLetters.Location = new System.Drawing.Point(148, 80);
+            this.allowLetters.Name = "allowLeters";
+            this.allowLetters.Size = new System.Drawing.Size(99, 19);
+            this.allowLetters.TabIndex = 7;
+            this.allowLetters.Text = "Permitir letras";
+            this.allowLetters.UseVisualStyleBackColor = true;
+            this.allowLetters.Click += new System.EventHandler(this.CheckAllowances);
             // 
             // allowNumbers
             // 
@@ -215,7 +215,7 @@ namespace PassGen
             this.Controls.Add(this.showText);
             this.Controls.Add(this.allowSymbols);
             this.Controls.Add(this.allowNumbers);
-            this.Controls.Add(this.allowLeters);
+            this.Controls.Add(this.allowLetters);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lengthSelector);
             this.Controls.Add(this.label3);
@@ -244,7 +244,7 @@ namespace PassGen
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown lengthSelector;
-        private System.Windows.Forms.CheckBox allowLeters;
+        private System.Windows.Forms.CheckBox allowLetters;
         private System.Windows.Forms.CheckBox allowNumbers;
         private System.Windows.Forms.CheckBox allowSymbols;
         private System.Windows.Forms.CheckBox showText;

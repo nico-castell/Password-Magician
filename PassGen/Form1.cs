@@ -20,7 +20,7 @@ namespace PassGen
         {
             // The button contains the text of the mode to choose (not the chosen mode).
             Button button = (Button)sender;
-            List<CheckBox> checkBoxes = new List<CheckBox>() { allowLeters, allowNumbers, allowSymbols };
+            List<CheckBox> checkBoxes = new List<CheckBox>() { allowLetters, allowNumbers, allowSymbols };
             //
             // Use the button text to know the mode to switch to.
             if (button.Text == "Obfuscar")
@@ -51,6 +51,7 @@ namespace PassGen
             //
             // Things that happen anyways.
             OutBox.Text = "";
+            UpdateConditions(allowLetters.Checked, allowNumbers.Checked, allowSymbols.Checked);
         }
         //
         // User controls wether the password is shown or not.
@@ -71,7 +72,7 @@ namespace PassGen
         private void CheckAllowances(object sender, EventArgs e)
         {
             // Count the ammount of checkBoxes that are on (At least one must be on)
-            List<CheckBox> checkBoxes = new List<CheckBox>() { allowLeters, allowNumbers, allowSymbols };
+            List<CheckBox> checkBoxes = new List<CheckBox>() { allowLetters, allowNumbers, allowSymbols };
             int boxesAreOn = 0;
             foreach (CheckBox checkBox in checkBoxes)
                 boxesAreOn += checkBox.Checked ? 1 : 0;
@@ -89,15 +90,26 @@ namespace PassGen
             }
             //
             // Store values in the objects.
-            generator.AllowLetters = allowLeters.Checked;
-            generator.AllowNumbers = allowNumbers.Checked;
-            generator.AllowSymbols = allowSymbols.Checked;
-            //
-            obfuscator.AllowLetters = allowLeters.Checked;
-            obfuscator.AllowNumbers = allowNumbers.Checked;
-            obfuscator.AllowSymbols = allowSymbols.Checked;
+            UpdateConditions(allowLetters.Checked, allowNumbers.Checked, allowSymbols.Checked);
         }
         //
+        /// <summary>
+        /// Update the modifiers in all clases that use the 3 checkboxes.
+        /// </summary>
+        /// <param name="AllowLetters">The allowLetters checkbox</param>
+        /// <param name="AllowNumbers">The allowNumbers checkbox</param>
+        /// <param name="AllowSymbols">The allowSymbols checkbox</param>
+        void UpdateConditions(in bool AllowLetters, in bool AllowNumbers, in bool AllowSymbols)
+        {
+            // Access both clases by their parent class and update the settings.
+            List<Modifier> modes = new List<Modifier>() { generator, obfuscator };
+            foreach (Modifier mode in modes)
+            {
+                mode.AllowLetters = AllowLetters;
+                mode.AllowNumbers = AllowNumbers;
+                mode.AllowSymbols = AllowSymbols;
+            }
+        }
         // Generate the key.
         private void StartGen_Click(object sender, EventArgs e)
         {
