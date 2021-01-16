@@ -1,6 +1,7 @@
 # Password generator
 
-A simple window to generate secure passwords. It supports letters, numbers, and symbols.
+A simple window to generate secure passwords, or obfuscate phrases into secure passwords. It supports letters, numbers,
+and symbols.
 
 ## License
 

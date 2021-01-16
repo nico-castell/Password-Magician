@@ -5,12 +5,15 @@ We're using [semantic versioning](http://semver.org/).
 
 ## Unreleased
 
-### Version 2.0.0
+### Version 2.1.0
 
-The program will also get the funcionality to obfuscate a password and turn it into an unrecognizable string in a **one**
-**way** **only** process.
+Add the ability in the *obfuscate* mode, for the user to choose to allow letters, numbers, and/or symbols.
 
-This is currently under development in the *obfuscate* branch.
+## Version 2.0.0
+
+### Added
+
+Now, the program has te functionality to obfuscate a given password in a **one** **way** **only** process.
 
 ## Version 1.2.1
 
