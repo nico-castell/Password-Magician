@@ -3,6 +3,15 @@
 All significant changes to the program will be documented in this file.  
 We're using [semantic versioning](http://semver.org/).
 
+## Unreleased
+
+### Version 2.0.0
+
+The program will also get the funcionality to obfuscate a password and turn it into an unrecognizable string in a **one**
+**way** **only** process.
+
+This is currently under development in the *obfuscate* branch.
+
 ## Version 1.2.1
 
 ### Fixed
