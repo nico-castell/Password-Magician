@@ -3,6 +3,21 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Windows files
+*.ini
+*.db
+*lnk
+*.url
+
+# Test and temporary files
+*test*
+*tmp*
+
+# Vim files
+*~
+*.swp
+
+
 # User-specific files
 *.rsuser
 *.suo

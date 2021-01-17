@@ -20,7 +20,6 @@ namespace PassGen
         {
             // The button contains the text of the mode to choose (not the chosen mode).
             Button button = (Button)sender;
-            List<CheckBox> checkBoxes = new List<CheckBox>() { allowLetters, allowNumbers, allowSymbols };
             //
             // Use the button text to know the mode to switch to.
             if (button.Text == "Obfuscar")
@@ -32,11 +31,6 @@ namespace PassGen
                 insertPassLabel.Visible = true;
                 OutBox.ReadOnly = false;
                 this.Text = "Obfuscar contraseñas";
-                foreach (CheckBox checkBox in checkBoxes)
-                {
-                    checkBox.Enabled = false;
-                    checkBox.Checked = true;
-                }
             }
             else
             {
@@ -47,8 +41,6 @@ namespace PassGen
                 insertPassLabel.Visible = false;
                 OutBox.ReadOnly = true;
                 this.Text = "Generar contraseñas";
-                foreach (CheckBox checkBox in checkBoxes)
-                    checkBox.Enabled = true;
             }
             //
             // Things that happen anyways.

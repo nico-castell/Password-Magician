@@ -89,11 +89,6 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
-                    {
-                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
-                    }
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.CoreRuntime.3.1.x64"
                     {
                     "Name" = "8:.NET Core Runtime 3.1.10 (x64)"
@@ -256,15 +251,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Generador de contraseñas"
-        "ProductCode" = "8:{F53DC262-04E1-41D9-A74C-A52A53DF57A0}"
-        "PackageCode" = "8:{E64293AD-DBFB-4D91-97A7-63DFFD68D181}"
+        "ProductCode" = "8:{5B7A927A-069E-4820-A790-618848232DB9}"
+        "PackageCode" = "8:{92B4DE33-7F32-4D25-A28B-244BE2153386}"
         "UpgradeCode" = "8:{B3ED7474-DF6B-4E42-8483-DA810104E1B0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:2.0.0"
+        "ProductVersion" = "8:2.1.0"
         "Manufacturer" = "8:nico-castell"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
