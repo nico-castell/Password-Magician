@@ -3,11 +3,11 @@
 All significant changes to the program will be documented in this file.  
 We're using [semantic versioning](http://semver.org/).
 
-## Unreleased
+## Version 2.1.0
 
-### Version 2.1.0
+### Added
 
-Add the ability in the *obfuscate* mode, for the user to choose to allow letters, numbers, and/or symbols.
+When in 'obfuscate' mode, the user can now choose to allow or forbid Letters, Numbers, and/or symbols.
 
 ## Version 2.0.0
 

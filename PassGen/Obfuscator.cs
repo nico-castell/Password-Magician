@@ -26,67 +26,84 @@ namespace PassGen
         }
         //
         /// <summary>
-        /// Perform 4 mathematical operations on every character to obfuscate the input.
+        /// Use an algorithm to obfuscate the password into something that complies with what the user allows.
         /// </summary>
         /// <param name="input">The password to obfuscate</param>
         /// <returns>A seemingly random password</returns>
         public string ObfuscatePass(in string input)
         {
             string output = "";
-            // Loop on every character of the input.
-            foreach (char alpha in input)
+            int i = 0;
+            // Iterate through every possible operation, until the obfuscated password is complete.
+            while (true)
             {
-                char t = (char)0;
-                // Loop on every character of the key.
-                foreach (char beta in _key)
+                // Iterate through every char in the input.
+                foreach (char alpha in input)
                 {
-                    // Loop on every possible operation. (4 operation * 4 possible key chars = 16 ways to obfuscate).
-                    for (int i = 0; i < 4; i++)
+                    char t = (char)0;
+                    for (int k = 0; k < 4; k++)
                     {
-                        switch (i)
-                        {
-                            case 0:
-                                t = AddChars(alpha, beta);
-                                break;
-                            case 1:
-                                t = RestChars(alpha, beta);
-                                break;
-                            case 2:
-                                t = MultiplyChars(alpha, beta);
-                                break;
-                            case 3:
-                                t = TriChars(alpha, beta);
-                                break;
-                        }
-                        // If the character is valid, exit the loop, otherwise try with a different key char.
+                        t = MakeChar(alpha, _key[i % 4]);
+                        i++;
                         if (ValidateChar(t))
                             break;
-                        continue;
                     }
-                    // if the char already is valid, then break out of this loop too.
-                    if (ValidateChar(t))
-                        break;
+                    if (!ValidateChar(t))
+                        t = ForceChar(t);
+                    output += t;
+                    if (output.Length == input.Length) return output;
                 }
-                // The loop wasn't able to create a valid char. Create one now.
-                if (!ValidateChar(t))
-                {
-                    while (!ValidateChar(t))
-                    {
-                        // Add 1 to 't' until it's valid.
-                        t++;
-                        // If 't' exceeds the ASCII "ceiling", force it to be valid.
-                        if (t > 126)
-                        {
-                            t = (char)33;
-                            break;
-                        }
-                    }
-                }
-                output += t;
             }
-            return output;
         }
         //
+        /// <summary>
+        /// Use 4 arithmetic operations to create a valid character.
+        /// </summary>
+        /// <param name="base_char">The character to obfuscate</param>
+        /// <param name="key_char">The character used to obfuscate</param>
+        /// <returns>A char (hopefully valid)</returns>
+        char MakeChar(in char base_char, in char key_char)
+        {
+            char t = (char)0;
+            for (int i = 0; i < 4; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        t = AddChars(base_char, key_char);
+                        break;
+                    case 1:
+                        t = RestChars(base_char, key_char);
+                        break;
+                    case 2:
+                        t = MultiplyChars(base_char, key_char);
+                        break;
+                    case 3:
+                        t = TriChars(base_char, key_char);
+                        break;
+                }
+                if (ValidateChar(t))
+                    return t;
+            }
+            return t;
+        }
+        //
+        /// <summary>
+        /// When all else has failed, force the creation of a valid char.
+        /// </summary>
+        /// <param name="failed_char">The failed character</param>
+        /// <returns>A validated char</returns>
+        char ForceChar(char failed_char)
+        {
+            while (!ValidateChar(failed_char))
+            {
+                if (failed_char > 126)
+                    failed_char = (char)33;
+                failed_char++;
+            }
+            return failed_char;
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Add the values of two characters and normalize the output.
         /// </summary>
