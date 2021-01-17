@@ -33,24 +33,56 @@ namespace PassGen
         public string ObfuscatePass(in string input)
         {
             string output = "";
-            for (int i = 0; i < input.Length; i++)
+            // Loop on every character of the input.
+            foreach (char alpha in input)
             {
-                int operation = i % 4;
-                switch (operation)
+                char t = (char)0;
+                // Loop on every character of the key.
+                foreach (char beta in _key)
                 {
-                    case 0:
-                        output += AddChars(input[i], _key[operation]);
-                        break;
-                    case 1:
-                        output += RestChars(input[i], _key[operation]);
-                        break;
-                    case 2:
-                        output += MultiplyChars(input[i], _key[operation]);
-                        break;
-                    case 3:
-                        output += TriChars(input[i], _key[operation]);
+                    // Loop on every possible operation. (4 operation * 4 possible key chars = 16 ways to obfuscate).
+                    for (int i = 0; i < 4; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                t = AddChars(alpha, beta);
+                                break;
+                            case 1:
+                                t = RestChars(alpha, beta);
+                                break;
+                            case 2:
+                                t = MultiplyChars(alpha, beta);
+                                break;
+                            case 3:
+                                t = TriChars(alpha, beta);
+                                break;
+                        }
+                        // If the character is valid, exit the loop, otherwise try with a different key char.
+                        if (ValidateChar(t))
+                            break;
+                        continue;
+                    }
+                    // if the char already is valid, then break out of this loop too.
+                    if (ValidateChar(t))
                         break;
                 }
+                // The loop wasn't able to create a valid char. Create one now.
+                if (!ValidateChar(t))
+                {
+                    while (!ValidateChar(t))
+                    {
+                        // Add 1 to 't' until it's valid.
+                        t++;
+                        // If 't' exceeds the ASCII "ceiling", force it to be valid.
+                        if (t > 126)
+                        {
+                            t = (char)33;
+                            break;
+                        }
+                    }
+                }
+                output += t;
             }
             return output;
         }
