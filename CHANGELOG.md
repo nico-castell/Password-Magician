@@ -1,7 +1,21 @@
 # Changelog
 
 All significant changes to the program will be documented in this file.  
-We're using [semantic versioning](http://semver.org/).
+We're not using [semantic versioning](http://semver.org/).
+
+This is how we're determining the versions:
+
+Position | Meaning
+-|-
+1 | Features added
+0 | Improved features
+0 | Patches
+
+## Version 3.0.0
+
+### Added
+
+An encryption mode that uses XOR boolean logic and a password.
 
 ## Version 2.1.0
 
