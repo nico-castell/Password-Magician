@@ -1,7 +1,10 @@
-# Password generator
+# Password magician
 
-A simple window to generate secure passwords, or obfuscate phrases into secure passwords. It supports letters, numbers,
-and symbols.
+This is a password "generator", but it does more that generate passwords, it can:
+
+1. Generate passwords.
+2. Obfuscate passwords.
+3. Encrypt passwords.
 
 ## License
 

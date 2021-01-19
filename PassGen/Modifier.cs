@@ -11,10 +11,6 @@
         /// </summary>
         public bool AllowLetters
         {
-            get
-            {
-                return _allowLetters;
-            }
             set
             {
                 _allowLetters = value;
@@ -30,10 +26,6 @@
         /// </summary>
         public bool AllowNumbers
         {
-            get
-            {
-                return _allowNumbers;
-            }
             set
             {
                 _allowNumbers = value;
@@ -49,10 +41,6 @@
         /// </summary>
         public bool AllowSymbols
         {
-            get
-            {
-                return _allowSymbols;
-            }
             set
             {
                 _allowSymbols = value;
@@ -68,16 +56,16 @@
         {
             bool result = false;
             // Test letters (ASCII range and allowance)
-            if (((charToTest > 64 && charToTest < 91) ||
+            if (((charToTest > 64 && charToTest < 91)   ||
                  (charToTest > 96 && charToTest < 123)) &&
                _allowLetters == true)
             {
                 result = true;
             }
             // Test symbols (ASCII range and allowance)
-            if (((charToTest > 32 && charToTest < 48) ||
-                 (charToTest > 57 && charToTest < 65) ||
-                 (charToTest > 90 && charToTest < 97) ||
+            if (((charToTest > 32  && charToTest < 48)   ||
+                 (charToTest > 57  && charToTest < 65)   ||
+                 (charToTest > 90  && charToTest < 97)   ||
                  (charToTest > 122 && charToTest < 127)) &&
                 _allowSymbols == true)
             {
