@@ -11,6 +11,14 @@ Position | Meaning
 0 | Improved features
 0 | Patches
 
+## Unreleased
+
+### Version 3.1.0
+
+This update will not affect users, it will mainly incorporate defensive code and tests to the application, so developers
+can have an easier time working on it. This will also ensure that further upgrades will be less likely to have bugs in
+their final releases.
+
 ## Version 3.0.0
 
 ### Added

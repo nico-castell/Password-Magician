@@ -5,7 +5,7 @@ namespace PassGen
     /// <summary>
     /// An object capable of obfuscating text into a secure password using Letters, Numbers, and/or Symbols.
     /// </summary>
-    class Obfuscator : Modifier
+    public class Obfuscator : Modifier
     {
         /// <summary>
         /// An array of 4 characters used to obfuscate the password.

@@ -9,8 +9,7 @@
 *lnk
 *.url
 
-# Test and temporary files
-*test*
+# Temporary files
 *tmp*
 
 # Vim files

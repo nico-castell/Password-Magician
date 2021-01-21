@@ -5,7 +5,7 @@ namespace PassGen
     /// <summary>
     /// Password generator that supports numbers, letters, and symbols.
     /// </summary>
-    class Generator : Modifier
+    public class Generator : Modifier
     {
         /// <summary>
         /// Generate a password with the pre-selected number of chars.

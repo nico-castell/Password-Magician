@@ -3,7 +3,7 @@
     /// <summary>
     /// This class uses XOR encryption to encrypt a phrase.
     /// </summary>
-    class Crypter : Modifier
+    public class Crypter : Modifier
     {
         /// <summary>
         /// The password the user wants to encrypt
@@ -29,7 +29,7 @@
         {
             // Get the length of the variables.
             int passl = _pass.Length;
-            int keyl  = key.Length;
+            int keyl = key.Length;
             // Create array for encryption
             char[] output = new char[passl];
             //
