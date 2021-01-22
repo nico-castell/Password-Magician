@@ -214,15 +214,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Generador de contraseñas"
-        "ProductCode" = "8:{01605089-D7BD-4061-98CE-AD8E3EBC92CA}"
-        "PackageCode" = "8:{355016C7-392B-4F63-8B63-21A9E44A9DD9}"
+        "ProductCode" = "8:{6F5D38A0-D2C7-4263-9DB4-C55B64BF044D}"
+        "PackageCode" = "8:{0A3F24E5-B67D-43FD-9067-2209DFE7927D}"
         "UpgradeCode" = "8:{BDF44BE9-93F1-45DD-9906-06EA357BA4EC}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:3.0.0"
+        "ProductVersion" = "8:3.0.1"
         "Manufacturer" = "8:nico-castell"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -750,7 +750,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CF9DA048B1174675A6191FABBEEFAFB9"
             {
-            "SourcePath" = "8:..\\PassGen\\obj\\Release\\netcoreapp3.1\\apphost.exe"
+            "SourcePath" = "8:..\\PassGen\\obj\\Debug\\netcoreapp3.1\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE6EB1154AFC46E5A8F9581085BBEC26"
