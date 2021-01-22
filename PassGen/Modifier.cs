@@ -5,7 +5,7 @@
         /// <summary>
         /// Should allow ASCII ranges: 65-90, 97-122 (dec)
         /// </summary>
-        public bool _allowLetters = true;
+        bool _allowLetters = true;
         /// <summary>
         /// Allow letters to be used in the password
         /// </summary>
