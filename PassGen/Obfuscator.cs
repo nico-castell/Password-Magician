@@ -43,7 +43,7 @@ namespace PassGen
                     char t = (char)0;
                     for (int k = 0; k < 4; k++)
                     {
-                        t = MakeChar(alpha, _key[i % 4]);
+                        t = MakeChar(alpha, _key[^((i % 4) + 1)]); // Acess the '_key' indexes like: 3, 2, 1, 0, 3, 2, 1, 0...
                         i++;
                         if (ValidateChar(t))
                             break;
