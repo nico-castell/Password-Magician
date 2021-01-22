@@ -5,7 +5,7 @@ namespace PassGen
     /// <summary>
     /// An object capable of obfuscating text into a secure password using Letters, Numbers, and/or Symbols.
     /// </summary>
-    class Obfuscator : Modifier
+    public class Obfuscator : Modifier
     {
         /// <summary>
         /// An array of 4 characters used to obfuscate the password.
@@ -43,7 +43,7 @@ namespace PassGen
                     char t = (char)0;
                     for (int k = 0; k < 4; k++)
                     {
-                        t = MakeChar(alpha, _key[i % 4]);
+                        t = MakeChar(alpha, _key[^((i % 4) + 1)]); // Acess the '_key' indexes like: 3, 2, 1, 0, 3, 2, 1, 0...
                         i++;
                         if (ValidateChar(t))
                             break;
