@@ -16,9 +16,7 @@ namespace PassGen
         {
             string output = "";
             for (int i = 0; i < length; i++)
-            {
                 output += GenValidChar();
-            }
             return output;
         }
         //
@@ -29,12 +27,9 @@ namespace PassGen
         char GenValidChar()
         {
             Random random = new Random();
-            char output;
-            while (true)
-            {
+            char output = (char)0;
+            while (ValidateChar(output))
                 output = (char)random.Next(33, 126);
-                if (ValidateChar(output)) break;
-            }
             return output;
         }
     }

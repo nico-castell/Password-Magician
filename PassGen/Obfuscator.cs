@@ -34,7 +34,6 @@ namespace PassGen
         {
             string output = "";
             int i = 0;
-            // Iterate through every possible operation, until the obfuscated password is complete.
             while (true)
             {
                 // Iterate through every char in the input.

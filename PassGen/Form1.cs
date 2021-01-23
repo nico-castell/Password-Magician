@@ -10,18 +10,18 @@ namespace PassGen
         {
             InitializeComponent();
         }
-        //
+        
         // Instantiate the classes that generate/obfuscate the key.
         readonly Generator generator = new Generator();
         readonly Obfuscator obfuscator = new Obfuscator();
         readonly Crypter crypter = new Crypter();
-        //
-        // Swith between 'generate' mode and 'obfuscate' mode, Changing the UI to fit the purpose.
+        
+        // Swith between modes, Changing the UI to fit the purpose.
         private void ModeSelector_Click(object sender, EventArgs e)
         {
-            // The button contains the text of the mode to choose (not the chosen mode).
+            // The button contains the text of the next mode to choose (not the current mode).
             Button button = (Button)sender;
-            //
+            
             // Use the button text to know the mode to switch to.
             switch (button.Text)
             {
@@ -56,28 +56,58 @@ namespace PassGen
                     ChangeEnablingOfCheckboxes(false);
                     break;
             }
-            //
-            // Things that happen anyways.
+            
+            // These happen every time the mode is changed.
             OutBox.Text = "";
             UpdateConditions(allowLetters.Checked, allowNumbers.Checked, allowSymbols.Checked);
         }
-        //
+        
+        /// <summary>
+        /// Change wether the checkboxes to allow Letters, Numbers, and/or Symbols are enabled.
+        /// </summary>
+        /// <param name="newState">Their new state</param>
+        void ChangeEnablingOfCheckboxes(in bool newState)
+        {
+            // Modify the three checkboxes
+            List<CheckBox> boxes = new List<CheckBox>() { allowLetters, allowNumbers, allowSymbols };
+            foreach (CheckBox box in boxes)
+                box.Enabled = newState;
+        }
+        
+        /// <summary>
+        /// Update the modifiers in all clases that use the 3 checkboxes.
+        /// </summary>
+        /// <param name="AllowLetters">The allowLetters checkbox</param>
+        /// <param name="AllowNumbers">The allowNumbers checkbox</param>
+        /// <param name="AllowSymbols">The allowSymbols checkbox</param>
+        void UpdateConditions(in bool AllowLetters, in bool AllowNumbers, in bool AllowSymbols)
+        {
+            // Access both clases by their parent class and update the settings.
+            List<Modifier> modes = new List<Modifier>() { generator, obfuscator, crypter };
+            foreach (Modifier mode in modes)
+            {
+                mode.AllowLetters = AllowLetters;
+                mode.AllowNumbers = AllowNumbers;
+                mode.AllowSymbols = AllowSymbols;
+            }
+        }
+        
         // User controls wether the password is shown or not.
         private void SetShowText(object sender, EventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
             OutBox.UseSystemPasswordChar = !checkBox.Checked;
         }
-        //
+        
         // Copy the password to the clipboard
         private void CopyToClipboard(object sender, EventArgs e)
         {
             if (OutBox.Text != "")
                 Clipboard.SetText(OutBox.Text);
         }
+        
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //
         // User controls allowance of numbers, letters, and symbols.
         private void CheckAllowances(object sender, EventArgs e)
         {
@@ -98,40 +128,7 @@ namespace PassGen
             // Store values in the objects.
             UpdateConditions(allowLetters.Checked, allowNumbers.Checked, allowSymbols.Checked);
         }
-        //
-        /// <summary>
-        /// Change wether the checkboxes to allow Letters, Numbers, and/or Symbols are enabled.
-        /// </summary>
-        /// <param name="newState">Their new state</param>
-        void ChangeEnablingOfCheckboxes(in bool newState)
-        {
-            // Modify the three checkboxes
-            List<CheckBox> boxes = new List<CheckBox>() { allowLetters, allowNumbers, allowSymbols };
-            foreach (CheckBox box in boxes)
-                box.Enabled = newState;
-        }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //
-        /// <summary>
-        /// Update the modifiers in all clases that use the 3 checkboxes.
-        /// </summary>
-        /// <param name="AllowLetters">The allowLetters checkbox</param>
-        /// <param name="AllowNumbers">The allowNumbers checkbox</param>
-        /// <param name="AllowSymbols">The allowSymbols checkbox</param>
-        void UpdateConditions(in bool AllowLetters, in bool AllowNumbers, in bool AllowSymbols)
-        {
-            // Access both clases by their parent class and update the settings.
-            List<Modifier> modes = new List<Modifier>() { generator, obfuscator, crypter };
-            foreach (Modifier mode in modes)
-            {
-                mode.AllowLetters = AllowLetters;
-                mode.AllowNumbers = AllowNumbers;
-                mode.AllowSymbols = AllowSymbols;
-            }
-        }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
         // Generate the key.
         private void StartGen_Click(object sender, EventArgs e)
         {

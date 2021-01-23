@@ -56,16 +56,16 @@
         {
             bool result = false;
             // Test letters (ASCII range and allowance)
-            if (((charToTest > 64 && charToTest < 91) ||
+            if (((charToTest > 64 && charToTest < 91)   ||
                  (charToTest > 96 && charToTest < 123)) &&
-               _allowLetters == true)
+                _allowLetters == true)
             {
                 result = true;
             }
             // Test symbols (ASCII range and allowance)
-            if (((charToTest > 32 && charToTest < 48) ||
-                 (charToTest > 57 && charToTest < 65) ||
-                 (charToTest > 90 && charToTest < 97) ||
+            if (((charToTest > 32  && charToTest < 48)   ||
+                 (charToTest > 57  && charToTest < 65)   ||
+                 (charToTest > 90  && charToTest < 97)   ||
                  (charToTest > 122 && charToTest < 127)) &&
                 _allowSymbols == true)
             {
