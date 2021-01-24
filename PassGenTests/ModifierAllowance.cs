@@ -19,7 +19,7 @@ namespace PassGenTests
         /// <summary>
         /// If the int corresponds to a letter in ASCII.
         /// </summary>
-        /// <returns>True if it is, False if it isn´t</returns>
+        /// <returns>True if it is, False if it isnï¿½t</returns>
         bool IsLetter(in int i)
         {
             if ((i > 64 && i < 91) || (i > 96 && i < 123))
@@ -29,7 +29,7 @@ namespace PassGenTests
         /// <summary>
         /// If the int corresponds to a number in ASCII.
         /// </summary>
-        /// <returns>True if it is, False if it isn´t</returns>
+        /// <returns>True if it is, False if it isnï¿½t</returns>
         bool IsNumber(in int i)
         {
             if (i > 47 && i < 58)
@@ -39,7 +39,7 @@ namespace PassGenTests
         /// <summary>
         /// If the int corresponds to a symbol in ASCII.
         /// </summary>
-        /// <returns>True if it is, False if it isn´t</returns>
+        /// <returns>True if it is, False if it isnï¿½t</returns>
         bool IsSymbol(in int i)
         {
             if ((i > 32 && i < 48) || (i > 57 && i < 65) || (i > 90 && i < 97) || (i > 122 && i < 127))
