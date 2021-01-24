@@ -10,12 +10,12 @@ namespace PassGen
         {
             InitializeComponent();
         }
-        
+
         // Instantiate the classes that generate/obfuscate the key.
-        readonly Generator generator = new Generator();
-        readonly Obfuscator obfuscator = new Obfuscator();
-        readonly Crypter crypter = new Crypter();
-        
+        readonly Generator _generator = new Generator();
+        readonly Obfuscator _obfuscator = new Obfuscator();
+        readonly Crypter _crypter = new Crypter();
+
         // Swith between modes, Changing the UI to fit the purpose.
         private void ModeSelector_Click(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace PassGen
         void UpdateConditions(in bool AllowLetters, in bool AllowNumbers, in bool AllowSymbols)
         {
             // Access both clases by their parent class and update the settings.
-            List<Modifier> modes = new List<Modifier>() { generator, obfuscator, crypter };
+            List<Modifier> modes = new List<Modifier>() { _generator, _obfuscator, _crypter };
             foreach (Modifier mode in modes)
             {
                 mode.AllowLetters = AllowLetters;
@@ -139,7 +139,7 @@ namespace PassGen
                 case "Generar contraseña":
                     Cursor.Current = Cursors.WaitCursor;
                     // Use the password length from the lengthSelector to generate the password.
-                    OutBox.Text = generator.GeneratePass((int)lengthSelector.Value);
+                    OutBox.Text = _generator.GeneratePass((int)lengthSelector.Value);
                     Cursor.Current = Cursors.Default;
                     break;
                 // 'obfuscate' mode.
@@ -148,15 +148,15 @@ namespace PassGen
                     {
                         Cursor.Current = Cursors.WaitCursor;
                         // Use the OutBox text to obfuscate the password.
-                        obfuscator.Key = OutBox.Text;
-                        OutBox.Text = obfuscator.ObfuscatePass(OutBox.Text);
+                        _obfuscator.Key = OutBox.Text;
+                        OutBox.Text = _obfuscator.ObfuscatePass(OutBox.Text);
                         Cursor.Current = Cursors.Default;
                     }
                     break;
                 // 'encrypt' mode.
                 case "Ingresar contraseña":
                     // Store phrase to encrypt.
-                    crypter.Pass = OutBox.Text;
+                    _crypter.Pass = OutBox.Text;
                     // Set UI to receive key (disable switching modes).
                     modeSelector.Enabled = false;
                     OutBox.Text = "";
@@ -166,7 +166,7 @@ namespace PassGen
                 case "Encriptar":
                     // Pass the key and encrypt.
                     Cursor.Current = Cursors.WaitCursor;
-                    OutBox.Text = crypter.Encrypt(OutBox.Text);
+                    OutBox.Text = _crypter.Encrypt(OutBox.Text);
                     Cursor.Current = Cursors.Default;
                     // Set the UI back to receive pass.
                     modeSelector.Enabled = true;
