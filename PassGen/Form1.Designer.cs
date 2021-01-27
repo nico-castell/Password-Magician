@@ -124,13 +124,13 @@ namespace PassGen
             0,
             0});
             // 
-            // allowLeters
+            // allowLetters
             // 
             this.allowLetters.AutoSize = true;
             this.allowLetters.Checked = true;
             this.allowLetters.CheckState = System.Windows.Forms.CheckState.Checked;
             this.allowLetters.Location = new System.Drawing.Point(148, 80);
-            this.allowLetters.Name = "allowLeters";
+            this.allowLetters.Name = "allowLetters";
             this.allowLetters.Size = new System.Drawing.Size(99, 19);
             this.allowLetters.TabIndex = 7;
             this.allowLetters.Text = "Permitir letras";

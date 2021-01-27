@@ -16,12 +16,13 @@ namespace PassGen
         readonly Obfuscator _obfuscator = new Obfuscator();
         readonly Crypter _crypter = new Crypter();
 
+        #region Changing modes
         // Swith between modes, Changing the UI to fit the purpose.
         private void ModeSelector_Click(object sender, EventArgs e)
         {
             // The button contains the text of the next mode to choose (not the current mode).
             Button button = (Button)sender;
-            
+
             // Use the button text to know the mode to switch to.
             switch (button.Text)
             {
@@ -56,12 +57,14 @@ namespace PassGen
                     ChangeEnablingOfCheckboxes(false);
                     break;
             }
-            
+
             // These happen every time the mode is changed.
             OutBox.Text = "";
             UpdateConditions(allowLetters.Checked, allowNumbers.Checked, allowSymbols.Checked);
         }
-        
+        #endregion
+
+        #region Controlling the checkboxes
         /// <summary>
         /// Change wether the checkboxes to allow Letters, Numbers, and/or Symbols are enabled.
         /// </summary>
@@ -73,7 +76,7 @@ namespace PassGen
             foreach (CheckBox box in boxes)
                 box.Enabled = newState;
         }
-        
+
         /// <summary>
         /// Update the modifiers in all clases that use the 3 checkboxes.
         /// </summary>
@@ -91,7 +94,9 @@ namespace PassGen
                 mode.AllowSymbols = AllowSymbols;
             }
         }
-        
+        #endregion
+
+        #region Main user interaction
         // User controls wether the password is shown or not.
         private void SetShowText(object sender, EventArgs e)
         {
@@ -105,7 +110,7 @@ namespace PassGen
             if (OutBox.Text != "")
                 Clipboard.SetText(OutBox.Text);
         }
-        
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // User controls allowance of numbers, letters, and symbols.
@@ -128,7 +133,7 @@ namespace PassGen
             // Store values in the objects.
             UpdateConditions(allowLetters.Checked, allowNumbers.Checked, allowSymbols.Checked);
         }
-        
+
         // Generate the key.
         private void StartGen_Click(object sender, EventArgs e)
         {
@@ -174,6 +179,7 @@ namespace PassGen
                     insertPassLabel.Text = "Inserte su contraseña:";
                     break;
             }
+            #endregion
         }
     }
 }
