@@ -11,7 +11,20 @@ Position | Meaning
 0 | Improved features
 0 | Patches
 
+## Version 3.0.3
+
+## Fixed
+Fixed a bug in *encrypt* mode where the program would have an unhandled exception
+if the user inserted an empty key.
+
+## Version 3.0.2
+*"Developers"* update.
+
+### Changed
+Namespaces, project file names, and sub-directories.
+
 ## Version 3.0.1
+*"Developers"* update.
 
 ### Added
 The main feature of this update is the addition of Unit testing. Specifically on the *Modifier* class.

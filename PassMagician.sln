@@ -17,6 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassMagicianTests", "PassMagicianTests\PassMagicianTests.csproj", "{999FAE10-BBE1-41F3-8A0D-6EEA631D814C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B593FAC3-8203-4F2A-8BA0-B3A0A905753F} = {B593FAC3-8203-4F2A-8BA0-B3A0A905753F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

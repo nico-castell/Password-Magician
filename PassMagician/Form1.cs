@@ -161,22 +161,28 @@ namespace PassMagician
             // 'encrypt' mode.
             case "Ingresar contraseña":
                 // Store phrase to encrypt.
-                _crypter.Pass = OutBox.Text;
-                // Set UI to receive key (disable switching modes).
-                modeSelector.Enabled = false;
-                OutBox.Text = "";
-                button.Text = "Encriptar";
-                insertPassLabel.Text = "Inserte su clave:";
+                if (OutBox.Text != "")
+                {
+                    _crypter.Pass = OutBox.Text;
+                    // Set UI to receive key (disable switching modes).
+                    modeSelector.Enabled = false;
+                    OutBox.Text = "";
+                    button.Text = "Encriptar";
+                    insertPassLabel.Text = "Inserte su clave:";
+                }
                 break;
             case "Encriptar":
                 // Pass the key and encrypt.
-                Cursor.Current = Cursors.WaitCursor;
-                OutBox.Text = _crypter.Encrypt(OutBox.Text);
-                Cursor.Current = Cursors.Default;
-                // Set the UI back to receive pass.
-                modeSelector.Enabled = true;
-                button.Text = "Ingresar contraseña";
-                insertPassLabel.Text = "Inserte su contraseña:";
+                if (OutBox.Text != "")
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    OutBox.Text = _crypter.Encrypt(OutBox.Text);
+                    Cursor.Current = Cursors.Default;
+                    // Set the UI back to receive pass.
+                    modeSelector.Enabled = true;
+                    button.Text = "Ingresar contraseña";
+                    insertPassLabel.Text = "Inserte su contraseña:";
+                }
                 break;
             }
             #endregion
