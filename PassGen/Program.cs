@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace PassGen
+namespace PassMagician
 {
     static class Program
     {

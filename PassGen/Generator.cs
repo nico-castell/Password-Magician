@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PassGen
+namespace PassMagician
 {
     /// <summary>
     /// Password generator that supports numbers, letters, and symbols.

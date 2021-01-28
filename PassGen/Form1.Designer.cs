@@ -1,5 +1,5 @@
 ﻿
-namespace PassGen
+namespace PassMagician
 {
     partial class Form1
     {

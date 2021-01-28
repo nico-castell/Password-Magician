@@ -1,4 +1,4 @@
-﻿namespace PassGen
+﻿namespace PassMagician
 {
     public class Modifier
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace PassGen
+namespace PassMagician
 {
     public partial class Form1 : Form
     {

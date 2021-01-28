@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PassGen\PassGen.csproj" />
+    <ProjectReference Include="..\PassGen\PassMagician.csproj" />
   </ItemGroup>
 
 </Project>

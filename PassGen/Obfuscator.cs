@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PassGen
+namespace PassMagician
 {
     /// <summary>
     /// An object capable of obfuscating text into a secure password using Letters, Numbers, and/or Symbols.

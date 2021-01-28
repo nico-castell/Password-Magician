@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PassGen;
+using PassMagician;
 
-namespace PassGenTests
+namespace PassMagicianTests
 {
     /**
      * How this testing works:

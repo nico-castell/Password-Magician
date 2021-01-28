@@ -1,4 +1,4 @@
-﻿namespace PassGen
+﻿namespace PassMagician
 {
     /// <summary>
     /// This class uses XOR encryption to encrypt a phrase.
