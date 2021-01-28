@@ -9,10 +9,8 @@
         /// <summary>
         /// Allow letters to be used in the password
         /// </summary>
-        public bool AllowLetters
-        {
-            set
-            {
+        public bool AllowLetters {
+            set {
                 _allowLetters = value;
             }
         }
@@ -24,10 +22,8 @@
         /// <summary>
         /// Allow numbers to be used in the password
         /// </summary>
-        public bool AllowNumbers
-        {
-            set
-            {
+        public bool AllowNumbers {
+            set {
                 _allowNumbers = value;
             }
         }
@@ -39,10 +35,8 @@
         /// <summary>
         /// Allow symbols to be used in the password
         /// </summary>
-        public bool AllowSymbols
-        {
-            set
-            {
+        public bool AllowSymbols {
+            set {
                 _allowSymbols = value;
             }
         }
@@ -56,7 +50,7 @@
         {
             bool result = false;
             // Test letters (ASCII range and allowance)
-            if (((charToTest > 64 && charToTest < 91)   ||
+            if (((charToTest > 64 && charToTest < 91) ||
                  (charToTest > 96 && charToTest < 123)) &&
                 _allowLetters == true)
             {

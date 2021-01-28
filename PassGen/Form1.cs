@@ -26,36 +26,36 @@ namespace PassGen
             // Use the button text to know the mode to switch to.
             switch (button.Text)
             {
-                case "Generar":
-                    // Set the UI to 'generate' mode.
-                    button.Text = "Obfuscar";
-                    lengthSelector.Enabled = true;
-                    StartGen.Text = "Generar contraseña";
-                    insertPassLabel.Visible = false;
-                    OutBox.ReadOnly = true;
-                    this.Text = "Generar contraseñas";
-                    ChangeEnablingOfCheckboxes(true);
-                    break;
-                case "Obfuscar":
-                    // Set the UI to 'obfuscate' mode.
-                    button.Text = "Encriptar";
-                    lengthSelector.Enabled = false;
-                    StartGen.Text = "Obfuscar contraseña";
-                    insertPassLabel.Visible = true;
-                    OutBox.ReadOnly = false;
-                    this.Text = "Obfuscar contraseñas";
-                    ChangeEnablingOfCheckboxes(true);
-                    break;
-                case "Encriptar":
-                    // Set the UI to 'encrypt' mode.
-                    button.Text = "Generar";
-                    lengthSelector.Enabled = false;
-                    StartGen.Text = "Ingresar contraseña";
-                    insertPassLabel.Visible = true;
-                    OutBox.ReadOnly = false;
-                    this.Text = "Encryptar contraseña";
-                    ChangeEnablingOfCheckboxes(false);
-                    break;
+            case "Generar":
+                // Set the UI to 'generate' mode.
+                button.Text = "Obfuscar";
+                lengthSelector.Enabled = true;
+                StartGen.Text = "Generar contraseña";
+                insertPassLabel.Visible = false;
+                OutBox.ReadOnly = true;
+                this.Text = "Generar contraseñas";
+                ChangeEnablingOfCheckboxes(true);
+                break;
+            case "Obfuscar":
+                // Set the UI to 'obfuscate' mode.
+                button.Text = "Encriptar";
+                lengthSelector.Enabled = false;
+                StartGen.Text = "Obfuscar contraseña";
+                insertPassLabel.Visible = true;
+                OutBox.ReadOnly = false;
+                this.Text = "Obfuscar contraseñas";
+                ChangeEnablingOfCheckboxes(true);
+                break;
+            case "Encriptar":
+                // Set the UI to 'encrypt' mode.
+                button.Text = "Generar";
+                lengthSelector.Enabled = false;
+                StartGen.Text = "Ingresar contraseña";
+                insertPassLabel.Visible = true;
+                OutBox.ReadOnly = false;
+                this.Text = "Encryptar contraseña";
+                ChangeEnablingOfCheckboxes(false);
+                break;
             }
 
             // These happen every time the mode is changed.
@@ -103,7 +103,7 @@ namespace PassGen
             CheckBox checkBox = (CheckBox)sender;
             OutBox.UseSystemPasswordChar = !checkBox.Checked;
         }
-        
+
         // Copy the password to the clipboard
         private void CopyToClipboard(object sender, EventArgs e)
         {
@@ -140,44 +140,44 @@ namespace PassGen
             Button button = (Button)sender;
             switch (button.Text)
             {
-                // 'generate' mode.
-                case "Generar contraseña":
+            // 'generate' mode.
+            case "Generar contraseña":
+                Cursor.Current = Cursors.WaitCursor;
+                // Use the password length from the lengthSelector to generate the password.
+                OutBox.Text = _generator.GeneratePass((int)lengthSelector.Value);
+                Cursor.Current = Cursors.Default;
+                break;
+            // 'obfuscate' mode.
+            case "Obfuscar contraseña":
+                if (OutBox.Text != "") // If it's empty, the program crashes.
+                {
                     Cursor.Current = Cursors.WaitCursor;
-                    // Use the password length from the lengthSelector to generate the password.
-                    OutBox.Text = _generator.GeneratePass((int)lengthSelector.Value);
+                    // Use the OutBox text to obfuscate the password.
+                    _obfuscator.Key = OutBox.Text;
+                    OutBox.Text = _obfuscator.ObfuscatePass(OutBox.Text);
                     Cursor.Current = Cursors.Default;
-                    break;
-                // 'obfuscate' mode.
-                case "Obfuscar contraseña":
-                    if (OutBox.Text != "") // If it's empty, the program crashes.
-                    {
-                        Cursor.Current = Cursors.WaitCursor;
-                        // Use the OutBox text to obfuscate the password.
-                        _obfuscator.Key = OutBox.Text;
-                        OutBox.Text = _obfuscator.ObfuscatePass(OutBox.Text);
-                        Cursor.Current = Cursors.Default;
-                    }
-                    break;
-                // 'encrypt' mode.
-                case "Ingresar contraseña":
-                    // Store phrase to encrypt.
-                    _crypter.Pass = OutBox.Text;
-                    // Set UI to receive key (disable switching modes).
-                    modeSelector.Enabled = false;
-                    OutBox.Text = "";
-                    button.Text = "Encriptar";
-                    insertPassLabel.Text = "Inserte su clave:";
-                    break;
-                case "Encriptar":
-                    // Pass the key and encrypt.
-                    Cursor.Current = Cursors.WaitCursor;
-                    OutBox.Text = _crypter.Encrypt(OutBox.Text);
-                    Cursor.Current = Cursors.Default;
-                    // Set the UI back to receive pass.
-                    modeSelector.Enabled = true;
-                    button.Text = "Ingresar contraseña";
-                    insertPassLabel.Text = "Inserte su contraseña:";
-                    break;
+                }
+                break;
+            // 'encrypt' mode.
+            case "Ingresar contraseña":
+                // Store phrase to encrypt.
+                _crypter.Pass = OutBox.Text;
+                // Set UI to receive key (disable switching modes).
+                modeSelector.Enabled = false;
+                OutBox.Text = "";
+                button.Text = "Encriptar";
+                insertPassLabel.Text = "Inserte su clave:";
+                break;
+            case "Encriptar":
+                // Pass the key and encrypt.
+                Cursor.Current = Cursors.WaitCursor;
+                OutBox.Text = _crypter.Encrypt(OutBox.Text);
+                Cursor.Current = Cursors.Default;
+                // Set the UI back to receive pass.
+                modeSelector.Enabled = true;
+                button.Text = "Ingresar contraseña";
+                insertPassLabel.Text = "Inserte su contraseña:";
+                break;
             }
             #endregion
         }

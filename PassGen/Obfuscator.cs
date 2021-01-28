@@ -14,10 +14,8 @@ namespace PassGen
         /// <summary>
         /// Assign a string and some of its characters will be used in the key.
         /// </summary>
-        public string Key
-        {
-            set
-            {
+        public string Key {
+            set {
                 _key[0] = value[0];
                 _key[1] = value[1];
                 _key[2] = value[^2]; // Use 'from the end' operator.
@@ -68,18 +66,18 @@ namespace PassGen
             {
                 switch (i)
                 {
-                    case 0:
-                        t = AddChars(base_char, key_char);
-                        break;
-                    case 1:
-                        t = RestChars(base_char, key_char);
-                        break;
-                    case 2:
-                        t = MultiplyChars(base_char, key_char);
-                        break;
-                    case 3:
-                        t = TriChars(base_char, key_char);
-                        break;
+                case 0:
+                    t = AddChars(base_char, key_char);
+                    break;
+                case 1:
+                    t = RestChars(base_char, key_char);
+                    break;
+                case 2:
+                    t = MultiplyChars(base_char, key_char);
+                    break;
+                case 3:
+                    t = TriChars(base_char, key_char);
+                    break;
                 }
                 if (ValidateChar(t))
                     return t;

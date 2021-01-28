@@ -12,10 +12,8 @@
         /// <summary>
         /// Set the password to encrypt
         /// </summary>
-        public string Pass
-        {
-            set
-            {
+        public string Pass {
+            set {
                 _pass = value;
             }
         }
