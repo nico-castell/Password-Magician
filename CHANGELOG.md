@@ -16,9 +16,14 @@ Position | Meaning
 
 ## Released
 
-### Version [3.0.3](https://github.com/nico-castell/Password-Magician/releases/tag/3.0.3) - *2021-01-28*
+### Version [3.0.4](https://github.com/nico-castell/Password-Magician/releases/tag/3.0.4) - *2021-01-29*
 
-### Fixed
+#### Fixed
+Fixed a bug in *generate* mode where the program would not output anything.
+
+### Version [3.0.3](https://github.com/nico-castell/Password-Magician/releases/tag/3.0.3) (YANKED) - *2021-01-28*
+
+#### Fixed
 Fixed a bug in *encrypt* mode where the program would have an unhandled
 exception if the user inserted an empty key.
 

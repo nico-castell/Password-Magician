@@ -28,7 +28,7 @@ namespace PassMagician
         {
             Random random = new Random();
             char output = (char)0;
-            while (ValidateChar(output))
+            while (!ValidateChar(output))
                 output = (char)random.Next(33, 126);
             return output;
         }
