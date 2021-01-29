@@ -14,7 +14,7 @@
                 _allowLetters = value;
             }
         }
-        //
+
         /// <summary>
         /// Should allow ASCII range 48-57 (dec)
         /// </summary>
@@ -27,7 +27,7 @@
                 _allowNumbers = value;
             }
         }
-        //
+
         /// <summary>
         /// Should allow ASCII ranges: 33-47, 58-64, 91-96, 123-126 (dec)
         /// </summary>
@@ -40,7 +40,7 @@
                 _allowSymbols = value;
             }
         }
-        //
+
         /// <summary>
         /// Validate that the number represents a valid character.
         /// </summary>
