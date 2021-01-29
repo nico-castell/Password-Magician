@@ -121,7 +121,7 @@ namespace PassMagician
             int boxesAreOn = 0;
             foreach (CheckBox checkBox in checkBoxes)
                 boxesAreOn += checkBox.Checked ? 1 : 0;
-            //
+
             // If only one box is one, disable it, else, enable all boxes.
             if (boxesAreOn == 1)
                 foreach (CheckBox checkBox in checkBoxes)
@@ -129,7 +129,7 @@ namespace PassMagician
             else
                 foreach (CheckBox checkBox in checkBoxes)
                     checkBox.Enabled = true;
-            //
+
             // Store values in the objects.
             UpdateConditions(allowLetters.Checked, allowNumbers.Checked, allowSymbols.Checked);
         }

@@ -17,7 +17,7 @@
                 _pass = value;
             }
         }
-        //
+        
         /// <summary>
         /// Use XOR encryption to process the previously stored phrase with a key
         /// </summary>
@@ -30,7 +30,7 @@
             int keyl = key.Length;
             // Create array for encryption
             char[] output = new char[passl];
-            //
+
             // Encrypt
             for (int i = 0; i < passl; i++)
                 output[i] = (char)(_pass[i] ^ key[i % keyl]);

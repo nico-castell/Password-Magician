@@ -19,7 +19,7 @@ namespace PassMagician
                 output += GenValidChar();
             return output;
         }
-        //
+
         /// <summary>
         /// Generates valid characters based on _allowLetters, _allowNumbers, and _allowSymbols
         /// </summary>

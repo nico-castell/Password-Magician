@@ -22,7 +22,7 @@ namespace PassMagician
                 _key[3] = value[^1];
             }
         }
-        //
+
         /// <summary>
         /// Use an algorithm to obfuscate the password into something that complies with what the user allows.
         /// </summary>
@@ -52,7 +52,7 @@ namespace PassMagician
                 }
             }
         }
-        //
+
         /// <summary>
         /// Use 4 arithmetic operations to create a valid character.
         /// </summary>
@@ -84,7 +84,7 @@ namespace PassMagician
             }
             return t;
         }
-        //
+
         /// <summary>
         /// When all else has failed, force the creation of a valid char.
         /// </summary>
@@ -111,7 +111,7 @@ namespace PassMagician
         {
             return NormalizeASCII((base_char + key_char) % 127);
         }
-        //
+
         /// <summary>
         /// Use the absolute value of the rest between two characters and normalize the output.
         /// </summary>
@@ -122,7 +122,7 @@ namespace PassMagician
         {
             return NormalizeASCII(Math.Abs((base_char - key_char) % 127));
         }
-        //
+
         /// <summary>
         /// Multiply the values of two characters and normalize the output.
         /// </summary>
@@ -133,7 +133,7 @@ namespace PassMagician
         {
             return NormalizeASCII((base_char * key_char) % 127);
         }
-        //
+
         /// <summary>
         /// Use two characters as two sides of a rectangle triangle, calculate the hyptenunse, and normalize the output.
         /// </summary>
@@ -145,7 +145,7 @@ namespace PassMagician
             int hypotenunse = (int)Math.Sqrt(base_char * base_char + key_char * key_char);
             return NormalizeASCII(hypotenunse % 127);
         }
-        //
+
         /// <summary>
         /// Normalize the output to avoid ASCII control chars, spaces, and DEL.
         /// </summary>
