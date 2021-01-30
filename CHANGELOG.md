@@ -21,7 +21,7 @@ Position | Meaning
 #### Fixed
 Fixed a bug in *generate* mode where the program would not output anything.
 
-### Version [3.0.3](https://github.com/nico-castell/Password-Magician/releases/tag/3.0.3) (YANKED) - *2021-01-28*
+### Version [3.0.3](https://github.com/nico-castell/Password-Magician/tree/9ba36d07b80756a1e7fb9849478c370cb9205a3f) (YANKED) - *2021-01-28*
 
 #### Fixed
 Fixed a bug in *encrypt* mode where the program would have an unhandled
