@@ -7,6 +7,31 @@
     <Platforms>AnyCPU;x64</Platforms>
     <ApplicationIcon>Icon1.ico</ApplicationIcon>
     <Configurations>Debug;Release</Configurations>
+    <PackageId>PasswordMagician</PackageId>
+    <Version>3.0.4</Version>
+    <Authors>nico-castell</Authors>
+    <Company>nico-castell</Company>
+    <Product>Password Magician</Product>
+    <Description>A simple and fast application to create, obfuscate and encrypt passwords</Description>
+    <Copyright>Copyright (c) 2021 nico-castell</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/nico-castell/Password-Magician.git</PackageProjectUrl>
+    <PackageIcon>Icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/nico-castell/Password-Magician.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <AssemblyName>Password Magician</AssemblyName>
+    <PackageLicenseExpression></PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\assets\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
